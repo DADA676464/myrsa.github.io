@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSA Encryption/Decryption</title>
+    <script type="text/javascript" src="script.js"></script>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    p {
+        margin: 10px 0;
+    }
+    
+    label {
+        display: inline-block;
+        width: 30px;
+    }
+    
+    input[type="text"],
+    textarea {
+        width: 200px;
+    }
+    
+    button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    #encryption-keys, #decryption-keys {
+        margin-top: 10px;
+    }
+    
+    .color-black {
+        color: black;
+    }
+    
+    .color-dark-silver {
+        color: #737373;
+    }
+    
+    #public-key, #private-key {
+        font-weight: bold;
+    }
+    
+    #encrypted-message-textbox {
+        width: 100%;
+        height: 100px;
+    }
+    
+    #decrypted-message {
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <h1>RSA Encryption/Decryption</h1>
+    <p>
+        Enter two prime numbers (P and Q) to generate RSA keys:
+    </p>
+    <label for="p">P:</label>
+    <input type="text" id="p" />
+    <br />
+    <label for="q">Q:</label>
+    <input type="text" id="q" />
+    <br />
+    <button onclick="calculate()">Calculate Keys</button>
+    <hr />
+    <h2>Generated Keys</h2>
+    <p>
+        N: <span id="n"></span>
+        <br />
+        L: <span id="l"></span>
+    </p>
+    <p>
+        Public Key: (<span id="e"></span>, <span id="n"></span>)
+        <br />
+        Private Key: (<span id="d"></span>, <span id="n"></span>)
+    </p>
+    <div id="encryption-keys"></div>
+    <div id="decryption-keys"></div>
+    <hr />
+    <h2>Encryption/Decryption</h2>
+    <p>
+        Enter the message you want to encrypt:
+    </p>
+    <textarea id="message"></textarea>
+    <br />
+    <button onclick="encryptMessage()">Encrypt Message</button>
+    <br />
+    <p>
+        Encrypted Message (Numeric): <span id="encrypted-message"></span>
+    </p>
+    <textarea id="encrypted-message-textbox"></textarea>
+    <br />
+    <button onclick="decryptMessage()">Decrypt Message</button>
+    <br />
+    <p>
+        Decrypted Message: <span id="decrypted-message"></span>
+    </p>
+    <script type="text/javascript">
+        // You can also put the JavaScript functions directly here if you don't have an external file.
+    </script>
+</body>
+</html>
